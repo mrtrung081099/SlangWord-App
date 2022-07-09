@@ -47,6 +47,19 @@ public class RandomGame {
         return this.userAnswer;
     }
 
-
+    public boolean printResult() {
+        if (this.userAnswer == -1) {
+            System.out.println("You haven't answered yet!");
+            return false;
+        } else if (this.userAnswer == this.correctAnswer) {
+            System.out.println("=====>Correct Answer!");
+            System.out.println("\n   (-_-) Big deal!  \n");
+            return true;
+        } else {
+            System.out.println("=====>Wrong Answer!");
+            System.out.println("\n  (¬_¬) Too bad for you.  \n");
+            return false;
+        }
+    }
 
 }
