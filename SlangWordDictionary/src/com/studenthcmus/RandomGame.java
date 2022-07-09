@@ -73,7 +73,7 @@ public class RandomGame {
         try {
             do {
                 if(this.userAnswer <0 || this.userAnswer >= this.answers.length) {
-
+                    
                     System.out.println("Please enter a valid answer!");
                 }
                 System.out.print("Enter your answer: ");
@@ -82,23 +82,27 @@ public class RandomGame {
                     this.userAnswer = Integer.parseInt(line)-1 ;
                 }
                 else {
-                    this.userAnswer=-1;
+                   this.userAnswer=-1;
                 }
 
             } while (this.userAnswer < 0 || this.userAnswer >= this.answers.length);
-
+            
         } catch (Exception e) {
-
+           
         }
-
+       
         if(! printResult()){System.out.println("*The correct answer is: " + this.answers[this.correctAnswer]);
+    }
+}
+
+
+    private boolean isNumeric(String readLine) {
+        try {
+            Integer.parseInt(readLine);
+            return true;
+        } catch (Exception e) {
+            return false;
         }
-        private boolean isNumeric(String readLine) {
-            try {
-                Integer.parseInt(readLine);
-                return true;
-            } catch (Exception e) {
-                return false;
-            }
-        }
+    }
+
 }
