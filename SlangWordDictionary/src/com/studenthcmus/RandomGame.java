@@ -93,4 +93,12 @@ public class RandomGame {
 
         if(! printResult()){System.out.println("*The correct answer is: " + this.answers[this.correctAnswer]);
         }
+        private boolean isNumeric(String readLine) {
+            try {
+                Integer.parseInt(readLine);
+                return true;
+            } catch (Exception e) {
+                return false;
+            }
+        }
 }
